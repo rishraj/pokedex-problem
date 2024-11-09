@@ -6,18 +6,8 @@ type PokemonProps = {
   pokemonName: string;
 }
 
-// renders a row with the name, id, type and sprite image
+// Accepts pokemon name and displays it in a table
 export default function PokemonRow({pokemonName}: PokemonProps){
-  
-  /* const getData = async (pokemonName: string) => {
-    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/pokemon?name=` + pokemonName
-    const response = await fetch(
-      url,
-    )
-    const data = await response.json()
-    console.log('getData', data)
-    return data
-  } */
 
   const { isPending, error, data: pokemon } = trpc.getPokemon.useQuery(pokemonName);
 
@@ -30,22 +20,6 @@ export default function PokemonRow({pokemonName}: PokemonProps){
   if  (error) {
     return 'An error has occurred: ' + error.message;
   }
-
-  // change to tRPC
-  /* const { isPending, error, data: pokemon } = useQuery({
-    queryKey: ['pokemonData'],
-    queryFn: () => (getData(pokemonName)),
-    });
-  
-  cosole.log('Data fetching was successful. Data is', pokemon)
-
-  if (isPending) {
-    return <div>'Loading...'</div>;
-  }
-
-  if  (error) {
-    return 'An error has occurred: ' + error.message;
-  } */
 
   return(
   <TableContainer sx={{mb: 5}} component={Paper} elevation={5}>

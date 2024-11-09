@@ -1,3 +1,4 @@
+// Mock data used for the problem
 const allPokemonData = [
   {
     id: 1,

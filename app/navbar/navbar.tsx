@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./navbar.module.css"
 import Link from "next/link";
 
+// Navbar displayed on all pages
 export default function Navbar(){
   return(
     <nav className={styles.nav}>

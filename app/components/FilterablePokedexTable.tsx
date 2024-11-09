@@ -6,7 +6,7 @@ import PokedexTable from "./PokedexTable";
 
 
 
-
+// Gets the type of pokemon from client and displays it
 export default function FilterablePokedexTable() {
   const [selectedType, selectType] = useState<string | undefined>('')
   

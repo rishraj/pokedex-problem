@@ -1,14 +1,13 @@
 import React from "react";
 import PokemonRow from "./PokemonRow";
-import styles from "./SinglePokemon.module.css"
 import { Typography } from "@mui/material";
 
-interface SinglePokemonProps {
+type SinglePokemonProps = {
   pokemonName: string | null;
 }
 
+// Handles the case of no pokemon name given
 function SinglePokemon({pokemonName}: SinglePokemonProps){
-  
 
   if (pokemonName) {
     console.log('value passed in singlepokemon(is it equal to buttonclickdata)', pokemonName)

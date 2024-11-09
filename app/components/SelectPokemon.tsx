@@ -7,6 +7,7 @@ import SinglePokemon from './SinglePokemon';
 import allPokemonData from '../utilities/data';
 import { Button } from '@mui/material';
 
+// Gets the type of pokemon from the client
 export default function SelectPokemon() {
   const [buttonClickData, setButtonClickData] = useState<string | null>('');
 

@@ -10,6 +10,7 @@ type PokemonTypeSelectionProps = {
   selectType: (type:string | undefined) => void;
 }
 
+// Accepts pokemon type from the client
 export default function PokemonTypeSelection ({ selectedType, selectType}: PokemonTypeSelectionProps){
 
   const [autocompleteData, setAutocompleteData] = useState<string | null>('');

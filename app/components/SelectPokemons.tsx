@@ -26,6 +26,7 @@ const MenuProps = {
 
 const names = allPokemonData.map(pokemon => pokemon.name)
 
+// Gets input of multiple pokemons from the client
 export default function SelectPokemons() {
 
   const [buttonClickData, setButtonClickData] = React.useState<string[] | string>('');
