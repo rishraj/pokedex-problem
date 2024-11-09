@@ -14,6 +14,28 @@ export const appRouter = router({
     })
     return pokemon;
   }),
+
+  getPokemons: publicProcedure.input(z.array(z.string()))
+  .query(async (opts) => {
+    const pokemons = await prisma.pokemon.findMany({
+      where: {
+        name: {in: opts.input},
+      }
+    })
+    return pokemons;
+  }),
+
+  getTypePokemons: publicProcedure.input(z.string())
+  .query(async (opts) => {
+    const typePokemons = await prisma.pokemon.findMany({
+      where: {
+        type: {
+          equals: opts.input,
+        },
+      },
+    })
+    return typePokemons;
+  }),
 });
 
 export type AppRouter = typeof appRouter;

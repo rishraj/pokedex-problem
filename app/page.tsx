@@ -3,25 +3,30 @@ import styles from "./page.module.css";
 import prisma from "@/lib/prisma";
 import PokemonRow from "./components/PokemonRow";
 import SelectPokemon from "./components/SelectPokemon";
+import SelectPokemons from "./components/SelectPokemons";
+import { Box, Container } from "@mui/material";
+import FilterablePokedexTable from "./components/FilterablePokedexTable";
 
-
-/* async function getPokemons(){
-  const pokemon = await prisma.pokemon.findUnique({
-    where: {
-      name: 'Charizard',
-    }
-  })
-
-  return pokemon;
-} */
 
 export default async function Home() {
-  //const pokemon = await getPokemons();
-  //console.log({pokemon})
   return (
-    <>
-      <h1>Good Luck!!</h1>
-      <SelectPokemon />
-    </>
+    <Container component='main' maxWidth='xs'>
+      <Box
+        sx={{
+          marginTop: 8,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <Box component="section">
+
+          <SelectPokemon />
+          <SelectPokemons />
+          <FilterablePokedexTable />
+
+        </Box>
+      </Box>
+    </Container>
   );
 }

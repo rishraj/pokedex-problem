@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { useQuery } from "@tanstack/react-query";
-import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { trpc } from "../utilities/client";
 
 type PokemonProps = {
