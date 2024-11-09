@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import PokedexTable from "./PokedexTable";
 import React from "react";
 
@@ -11,7 +12,7 @@ function MultiplePokemons({pokemonNames}: MultiplePokemonProps){
     return <PokedexTable pokemonArray={pokemonNames as string[]} pokemonType={'all'}/>
   }
   else {
-    return <div>No pokemon selected.</div>
+    return <Typography sx={{mb: 3}}>No pokemon Selected</Typography>
   }
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import PokemonRow from "./PokemonRow";
 import styles from "./SinglePokemon.module.css"
+import { Typography } from "@mui/material";
 
 interface SinglePokemonProps {
   pokemonName: string | null;
@@ -14,7 +15,7 @@ function SinglePokemon({pokemonName}: SinglePokemonProps){
     return <PokemonRow pokemonName={pokemonName}/>
   }
   else {
-    return <div className={styles.NoPokemon}>No pokemon selected.</div>
+    return <Typography sx={{mb: 3}}>No pokemon Selected</Typography>
   }
 }
 

@@ -1,7 +1,7 @@
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { Pokemon } from "../types/pokemon";
 import React from "react";
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import Image from "next/image";
 import { trpc } from "../utilities/client";
 
@@ -23,7 +23,7 @@ function PokedexTable({pokemonArray, pokemonType}: PokedexTableProps){
     }
 
     if (queryResult.isPending) {
-      return <div>'Loading...'</div>;
+      return <div>Loading...</div>;
     }
   
     if  (queryResult.error) {
@@ -31,14 +31,14 @@ function PokedexTable({pokemonArray, pokemonType}: PokedexTableProps){
     }
   
     return (
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <TableContainer sx={{mb: 5}} component={Paper} elevation={5}>
+        <Table sx={{ minWidth: 600 }} aria-label="simple table">
         <TableHead>
             <TableRow>
               <TableCell>Pokemon ID</TableCell>
-              <TableCell align="right">Name</TableCell>
-              <TableCell align="right">Type</TableCell>
-              <TableCell align="right">Sprite</TableCell>
+              <TableCell align="center">Name</TableCell>
+              <TableCell align="center">Type</TableCell>
+              <TableCell align="center">Sprite</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -50,9 +50,9 @@ function PokedexTable({pokemonArray, pokemonType}: PokedexTableProps){
                 <TableCell component="th" scope="row">
                   {pokemon.id}
                 </TableCell>
-                <TableCell align="right">{pokemon.name}</TableCell>
-                <TableCell align="right">{pokemon.type}</TableCell>
-                <TableCell align="right">
+                <TableCell align="center">{pokemon.name}</TableCell>
+                <TableCell align="center">{pokemon.type}</TableCell>
+                <TableCell align="center">
                   <Image width={130} height={110} src={pokemon.sprite} alt={`${pokemon.name}'s Image`} />
                 </TableCell>
               </TableRow>
@@ -64,7 +64,7 @@ function PokedexTable({pokemonArray, pokemonType}: PokedexTableProps){
   }
   else {
     return (
-      <p>No pokemon Selected</p>
+      <Typography sx={{mb: 3}}>No pokemon Selected</Typography>
     )
   }
 

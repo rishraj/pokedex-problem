@@ -55,7 +55,7 @@ export default function SelectPokemons() {
     <>
       <div>
         <form>
-          <FormControl sx={{ m: 1, width: 1000 }}>
+          <FormControl sx={{ width: 800}}>
             <InputLabel id="demo-multiple-checkbox-label">Select Multiple Pokemons</InputLabel>
             <Select
               labelId="demo-multiple-checkbox-label"

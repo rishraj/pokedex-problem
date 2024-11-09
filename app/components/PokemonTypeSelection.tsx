@@ -45,7 +45,6 @@ export default function PokemonTypeSelection ({ selectedType, selectType}: Pokem
       >
         Submit
       </Button>
-      <p>The selected type is: {selectedType}</p>
     </>
   );
 }
