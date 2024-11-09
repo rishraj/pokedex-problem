@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import prisma from "@/lib/prisma";
-import SelectPokemon from "./components/SelectPokemon";
 import ToDoList from "./components/ToDoList";
 
 
