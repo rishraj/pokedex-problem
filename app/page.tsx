@@ -10,23 +10,22 @@ async function getPokemons(){
       },
     },
   }) */
-  const pokemons = await prisma.pokemon.findMany({
+  const pokemon = await prisma.pokemon.findUnique({
     where: {
-      type: {
-        equals: 'Fire',
-      }
+      name: 'Charizard',
     }
   })
 
-  return pokemons;
+  return pokemon;
 }
 
 export default async function Home() {
-  const pokemons = await getPokemons();
-  console.log({pokemons})
+  const pokemon = await getPokemons();
+  console.log({pokemon})
   return (
     <>
       <h1>Good Luck!!</h1>
+      <p>{pokemon!.name}</p>
     </>
   );
 }
