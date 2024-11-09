@@ -1,17 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import prisma from "@/lib/prisma";
-import ToDoList from "./components/ToDoList";
+import PokemonRow from "./components/PokemonRow";
+import SelectPokemon from "./components/SelectPokemon";
 
 
-async function getPokemons(){
-  /* const pokemons = await prisma.pokemon.findMany({
-    where: {
-      type: {
-        equals: 'normal',
-      },
-    },
-  }) */
+/* async function getPokemons(){
   const pokemon = await prisma.pokemon.findUnique({
     where: {
       name: 'Charizard',
@@ -19,16 +13,15 @@ async function getPokemons(){
   })
 
   return pokemon;
-}
+} */
 
 export default async function Home() {
-  const pokemon = await getPokemons();
-  console.log({pokemon})
+  //const pokemon = await getPokemons();
+  //console.log({pokemon})
   return (
     <>
       <h1>Good Luck!!</h1>
-      <p>{pokemon!.name}</p>
-      <ToDoList />
+      <SelectPokemon />
     </>
   );
 }
