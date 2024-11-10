@@ -22,7 +22,7 @@ function PokedexTable({pokemonArray, pokemonType}: PokedexTableProps){
     }
 
     if (queryResult.isPending) {
-      return <div>Loading...</div>;
+      return <Typography variant="h3" sx={{mb: 3}}>Loading...</Typography>;
     }
   
     if  (queryResult.error) {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import { trpc } from "../utilities/client";
 
 type PokemonProps = {
@@ -14,7 +14,7 @@ export default function PokemonRow({pokemonName}: PokemonProps){
   console.log('Data fetching was successful. Data is', pokemon)
 
   if (isPending) {
-    return <div>Loading...</div>;
+    return <Typography variant="h3" sx={{mb: 5}}>Loading...</Typography>;
   }
 
   if  (error) {
